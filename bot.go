@@ -71,6 +71,10 @@ func Cmd8ChanCatalog(irccon *irc.Connection, target string, arguments []string) 
 	}
 }
 
+func CmdSource(irccon *irc.Connection, target string, arguments []string) {
+	PrivmsgWrapper(irccon, target, "https://github.com/zduch4c/8ChanBoardMonitorIRCBot")
+}
+
 func main() {
 	var (
 		Server   = "irc.rizon.net:6667"
@@ -80,6 +84,7 @@ func main() {
 
 	commands := map[string]func(*irc.Connection, string, []string){
 		"8ChanCatalog": Cmd8ChanCatalog,
+		"Source": CmdSource,
 	}
 
 	irccon := irc.IRC(Nick, Nick)
