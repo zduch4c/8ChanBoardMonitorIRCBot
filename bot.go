@@ -19,7 +19,7 @@ func Truncate(str string, length int) string {
 }
 
 func PrivmsgTruncate(irccon *irc.Connection, target, message string) {
-	irccon.Privmsg(target, Truncate(message, 200))
+	irccon.Privmsg(target, Truncate(message, 419))
 }
 
 func PrivmsgWrapper(irccon *irc.Connection, target, message string) {
@@ -79,7 +79,7 @@ func main() {
 	var (
 		Server   = "irc.rizon.net:6667"
 		Nick     = "[k00l]gobot"
-		Channels = []string{"#/tech/", "#/pone/", "#templeos"}
+		Channels = []string{"#/tech/", "#/pone/"}
 	)
 
 	commands := map[string]func(*irc.Connection, string, []string){
